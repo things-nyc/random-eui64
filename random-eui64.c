@@ -1,3 +1,34 @@
+/* random-eui64.c	Sat May 14 2016 20:14:09 tmm */
+
+/*
+
+Module:  random-eui64.c
+
+Function:
+	Generate a random EUI-64 id.
+
+Version:
+	V1.00	Sat May 14 2016 20:14:09 tmm	Edit level 1
+
+Copyright notice:
+	This file copyright (C) 2016 by
+
+		MCCI Corporation
+		3520 Krums Corners Road
+		Ithaca, NY  14850
+
+	This code is released under the MIT license; see file named LICENSE in 
+	the same directory as this file.
+ 
+Author:
+	Terry Moore, MCCI Corporation	May 2016
+
+Revision history:
+   1.00  Sat May 14 2016 20:14:09  tmm
+	Module created.
+
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -28,5 +59,4 @@ int main(int ac, char **av)
 		}
 
 	return 0;
- 
 	}
