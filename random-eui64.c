@@ -1,4 +1,4 @@
-/* random-eui64.c	Sat May 14 2016 20:14:09 tmm */
+/* random-eui64.c	Sat May 14 2016 21:15:10 tmm */
 
 /*
 
@@ -8,7 +8,7 @@ Function:
 	Generate a random EUI-64 id.
 
 Version:
-	V1.00	Sat May 14 2016 20:14:09 tmm	Edit level 1
+	V1.00	Sat May 14 2016 21:15:10 tmm	Edit level 2
 
 Copyright notice:
 	This file copyright (C) 2016 by
