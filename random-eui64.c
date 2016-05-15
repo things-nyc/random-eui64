@@ -42,7 +42,7 @@ int main(int ac, char **av)
 	fd = open("/dev/random", O_RDONLY);
 	if (fd < 0)
 		{
-		perror("can't open /dev/random: ");
+		perror("can't open /dev/random");
 		exit(1);
 		}	
 
