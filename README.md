@@ -20,5 +20,10 @@ Example:
 $ random-eui64
 4E-D9-09-C5-5E-57-B9-F6
 ```
-
+## Building
+There's no makefile, but the default rules of make can be used.
+```
+$ make random-eui64
+cc     random-eui64.c   -o random-eui64
+```
 
