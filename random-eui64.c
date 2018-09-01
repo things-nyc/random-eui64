@@ -41,32 +41,32 @@ Revision history:
 
 int main(int ac, char **av)
 	{
-	int fd, i;
+	int fd, iArg;
 	unsigned char eui[8];
-	unsigned sizeEui;
+	unsigned sizeEui, iEui;
 	char cSep;
 
 	sizeEui = 8;
 	cSep = '-';
 
-	for (i = 1; i < ac; ++i)
+	for (iArg = 1; iArg < ac; ++iArg)
 		{
-		if (strcmp(av[i], "-eui48") == 0)
+		if (strcmp(av[iArg], "-eui48") == 0)
 			sizeEui = 6;
-		else if (strcmp(av[i], "-eui64") == 0)
+		else if (strcmp(av[iArg], "-eui64") == 0)
 			sizeEui = 8;
-		else if (strcmp(av[i], "-colon") == 0)
+		else if (strcmp(av[iArg], "-colon") == 0)
 			cSep = ':';
-		else if (strcmp(av[i], "-dash") == 0)
+		else if (strcmp(av[iArg], "-dash") == 0)
 			cSep = '-';
-		else if (strcmp(av[i], "-h") == 0 ||
-			 strcmp(av[i], "--help") == 0 ||
-			 strcmp(av[i], "-help") == 0)
+		else if (strcmp(av[iArg], "-h") == 0 ||
+			 strcmp(av[iArg], "--help") == 0 ||
+			 strcmp(av[iArg], "-help") == 0)
 			{
 			errx(EXIT_SUCCESS, "usage: [-eui48 -eui64 -colon -dash]");
 			}
 		else
-			errx(EXIT_FAILURE, "invalid argument: %s", av[i]);
+			errx(EXIT_FAILURE, "invalid argument: %s", av[iArg]);
 		}
 
 	fd = open("/dev/random", O_RDONLY);
@@ -78,14 +78,14 @@ int main(int ac, char **av)
 
 	if (read(fd, eui, sizeEui) != sizeEui)
 		{
-		fprintf(stderr, "couldn't read %zu bytes\n", sizeEui);
+		fprintf(stderr, "couldn't read %u bytes\n", sizeEui);
 		exit(1);
 		}
 
 	eui[0] = (eui[0] & ~1) | 2;
-	for (i = 0; i < sizeEui; ++i)
+	for (iEui = 0; iEui < sizeEui; ++iEui)
 		{
-		printf("%02X%c", eui[i], i == sizeEui - 1 ? '\n' : cSep);
+		printf("%02X%c", eui[iEui], iEui == sizeEui - 1 ? '\n' : cSep);
 		}
 
 	return 0;
